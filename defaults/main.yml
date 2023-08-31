@@ -54,8 +54,12 @@ bootstrap_enable_epel: true
 # NTP package (ntp | chrony)
 bootstrap_ntp_package: ntp
 
-# NTP area (https://support.ntp.org/Servers/NTPPoolServers)
-bootstrap_ntp_area: europe
+# NTP servers
+bootstrap_ntp_servers:
+  - 0.europe.pool.ntp.org
+  - 1.europe.pool.ntp.org
+  - 2.europe.pool.ntp.org
+  - 3.europe.pool.ntp.org
 
 # Restrict NTP access to these hosts (default localhost)
 bootstrap_ntp_restrict:

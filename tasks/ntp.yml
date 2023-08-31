@@ -3,6 +3,6 @@
   ansible.builtin.include_tasks: ntp-Linux.yml
   when: ansible_system == "Linux"
 
-#- name: Configure NTP on Windows systems
-#  ansible.builtin.include_tasks: ntp-Windows.yml
-#  when: ansible_os_family == "Windows"
+- name: Configure NTP on Windows systems
+  ansible.builtin.include_tasks: ntp-Windows.yml
+  when: ansible_os_family == "Windows"
