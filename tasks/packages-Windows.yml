@@ -1,0 +1,10 @@
+---
+- name: Install basic packages
+  chocolatey.chocolatey.win_chocolatey:
+    name: "{{ _basic_packages }}"
+    state: present
+
+- name: Install additional packages
+  chocolatey.chocolatey.win_chocolatey:
+    name: "{{ bootstrap_additional_packages }}"
+    state: present

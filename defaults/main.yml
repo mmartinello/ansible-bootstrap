@@ -18,7 +18,7 @@ bootstrap_users:
 bootstrap_timezone_name: Etc/UTC
 bootstrap_keyboard_layout: en
 
-# Basic packages to be installed on every hosts
+# Basic packages to be installed on Linux
 bootstrap_basic_packages_linux:
   - bash-completion
   - elinks
@@ -35,6 +35,15 @@ bootstrap_basic_packages_linux:
   - screen
   - sudo
   - wget
+
+# Basic packages to be installed on Windows
+  - 7zip
+  - filezilla
+  - firefox
+  - googlechrome
+  - notepadplusplus.install
+  - putty.install
+  - windirstat
 
 # Additional packages to be installed
 bootstrap_additional_packages: []
