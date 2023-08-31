@@ -1,2 +1,5 @@
 ---
-# handlers file for mmartinello.bootstrap
+- name: Restart SSH Daemon
+  ansible.builtin.service:
+    name: "{{ _ssh_service_name | default('ssh') }}"
+    state: restarted
