@@ -1,0 +1,15 @@
+---
+- name: Enable EPEL repository
+  ansible.builtin.yum:
+    name: epel-release
+  when: ansible_distribution == 'CentOS' or ansible_distribution_file_variety == 'RedHat' and bootstrap_enable_epel
+
+- name: Install basic packages
+  ansible.builtin.package:
+    name: "{{ _basic_packages }}"
+    state: present
+
+- name: Install additional packages
+  ansible.builtin.package:
+    name: "{{ bootstrap_additional_packages }}"
+    state: present

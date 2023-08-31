@@ -1,0 +1,8 @@
+---
+- name: Install basic packages on Linux systems
+  ansible.builtin.include_tasks: packages-Linux.yml
+  when: ansible_system == "Linux"
+
+#- name: Install basic packages on Windows systems
+#  ansible.builtin.include_tasks: packages-Windows.yml
+#  when: ansible_os_family == "Windows"

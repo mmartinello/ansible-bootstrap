@@ -35,3 +35,9 @@ bootstrap_basic_packages_linux:
   - screen
   - sudo
   - wget
+
+# Additional packages to be installed
+bootstrap_additional_packages: []
+
+# Enable EPEL Release repository on RedHat based systems
+bootstrap_enable_epel: true

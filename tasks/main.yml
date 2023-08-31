@@ -18,8 +18,8 @@
 - name: Configure system users
   ansible.builtin.include_tasks: users.yml
 
-#- name: Install default packages
-#  ansible.builtin.include_tasks: packages.yml
+- name: Install default packages
+  ansible.builtin.include_tasks: packages.yml
 
 #- name: Configure system
 #  ansible.builtin.include_tasks: configure.yml
