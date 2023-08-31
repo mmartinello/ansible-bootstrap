@@ -1,0 +1,28 @@
+---
+- name: Disallow root SSH access
+  ansible.builtin.lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin without-password"
+    state: present
+  notify: Restart SSH Daemon
+
+- name: Enable Bash Completion
+  ansible.builtin.blockinfile:
+    path: /etc/bash.bashrc
+    create: true
+    block: |
+      if ! shopt -oq posix; then
+        if [ -f /usr/share/bash-completion/bash_completion ]; then
+          . /usr/share/bash-completion/bash_completion
+        elif [ -f /etc/bash_completion ]; then
+          . /etc/bash_completion
+        fi
+      fi
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Set timezone
+  community.general.timezone:
+    name: "{{ bootstrap_timezone_name }}"

@@ -41,3 +41,14 @@ bootstrap_additional_packages: []
 
 # Enable EPEL Release repository on RedHat based systems
 bootstrap_enable_epel: true
+
+# NTP package (ntp | chrony)
+bootstrap_ntp_package: ntp
+
+# NTP area (https://support.ntp.org/Servers/NTPPoolServers)
+bootstrap_ntp_area: europe
+
+# Restrict NTP access to these hosts (default localhost)
+bootstrap_ntp_restrict:
+  - "127.0.0.1"
+  - "::1"

@@ -1,0 +1,9 @@
+---
+- name: Configure NTP using the geerlingguy.ntp role
+  ansible.builtin.include_role:
+    name: geerlingguy.ntp
+  vars:
+    ntp_timezone: "{{ bootstrap_timezone_name }}"
+    ntp_package: "{{ bootstrap_ntp_package }}"
+    ntp_area: "{{ bootstrap_ntp_area }}"
+    ntp_restrict: "{{ bootstrap_ntp_restrict }}"
