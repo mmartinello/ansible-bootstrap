@@ -1,2 +1,37 @@
 ---
-# defaults file for mmartinello.bootstrap
+# User configuration
+bootstrap_superadmin_ask_pass: true
+bootstrap_admin_ask_pass: true
+
+# Default shell
+bootstrap_default_shell: /bin/bash
+
+# Bootstrap users (change it!)
+bootstrap_users:
+  - username: admin
+    comment: "Superadmin User"
+    password: $6$jW/jLdFnE7HZJWld$utTOBZ9q3zXxLacUZcxWWcLEAXLoWqgDgdFfWWDI5TQHn46GvE7Ph2d9Uke6qCBWgVNf6iuZTTc5aRI9zcKDh0
+    shell: /bin/bash
+    superadmin: true
+
+# Timezone and language configuration
+bootstrap_timezone_name: Etc/UTC
+bootstrap_keyboard_layout: en
+
+# Basic packages to be installed on every hosts
+bootstrap_basic_packages_linux:
+  - bash-completion
+  - elinks
+  - fdisk
+  - htop
+  - httpie
+  - joe
+  - less
+  - mc
+  - net-tools
+  - ncdu
+  - parted
+  - rsync
+  - screen
+  - sudo
+  - wget

@@ -1,0 +1,8 @@
+---
+- name: Configure system users on Linux systems
+  ansible.builtin.include_tasks: users-Linux.yml
+  when: ansible_system == "Linux"
+
+- name: Configure system users on Windows systems
+  ansible.builtin.include_tasks: install-Windows.yml
+  when: ansible_os_family == "Windows"

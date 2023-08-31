@@ -1,0 +1,6 @@
+---
+- name: Configure users
+  ansible.builtin.import_role:
+    name: mmartinello.users
+  vars:
+    users: "{{ bootstrap_users }}"
